@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:20:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/09/26 17:52:11 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:55:39 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	main(int argc, char *argv[])
 	t_stack	*stack_a;
 	int		i;
 
+	stack_a = (t_stack *)malloc(sizeof(t_stack));
+	stack_a->next = NULL;
 	if (argc > 1)
 	{
 		i = 0;
@@ -46,9 +48,7 @@ void	arg_to_stack(t_stack **stack_a, char *argv)
 {
 	int		i;
 	t_stack	*new;
-	t_stack	*tmp;
 
-	tmp = (t_stack *)malloc(sizeof(t_stack));
 	i = 0;
 	while (argv[i])
 	{
@@ -63,7 +63,7 @@ void	arg_to_stack(t_stack **stack_a, char *argv)
 				new->num += argv[i] - '0';
 			}
 			new->next = NULL;
-			ft_lstadd_back(tmp, new);
+			ft_lstadd_back(stack_a, new);
 		}
 		i++;
 	}
