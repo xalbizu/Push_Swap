@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_lib.h                                    :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 20:13:07 by xalbizu-         ###   ########.fr       */
+/*   Created: 2022/04/16 10:31:01 by xalbizu-          #+#    #+#             */
+/*   Updated: 2022/11/07 19:04:36 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_LIB_H
-# define PUSH_SWAP_LIB_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int				num;
+	t_list	*map;
+	t_list	*act_tlist;
 
-	struct s_stack	*next;
-}	t_stack;
-void	ft_listadd_back(t_stack **lst, t_stack *new);
-t_stack	*ft_listlast(t_stack *lst);
-void	checkalpha(char *str);
-void	exit_error(void);
-void	checkrepeat(t_stack *stack, int size);
-
-#endif
+	if (!*f && !*del && !lst)
+		return (NULL);
+	map = NULL;
+	while (lst)
+	{
+		act_tlist = ft_lstnew((*f)(lst->content));
+		ft_lstadd_back(&map, act_tlist);
+		lst = lst->next;
+	}
+	return (map);
+}

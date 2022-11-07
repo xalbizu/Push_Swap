@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_lib.h                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 20:13:07 by xalbizu-         ###   ########.fr       */
+/*   Created: 2022/04/05 13:24:27 by marvin            #+#    #+#             */
+/*   Updated: 2022/04/15 16:46:03 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_LIB_H
-# define PUSH_SWAP_LIB_H
+#include <unistd.h>
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+void	ft_putnbr_fd(int n, int fd)
 {
-	int				num;
+	long int	aux;
+	char		caux[12];
+	ssize_t		i;
 
-	struct s_stack	*next;
-}	t_stack;
-void	ft_listadd_back(t_stack **lst, t_stack *new);
-t_stack	*ft_listlast(t_stack *lst);
-void	checkalpha(char *str);
-void	exit_error(void);
-void	checkrepeat(t_stack *stack, int size);
-
-#endif
+	caux[0] = '0';
+	aux = n;
+	i = 0;
+	if (aux < 0)
+	{
+		aux *= -1;
+		write(fd, "-", 1);
+	}
+	while (aux > 9)
+	{
+		caux[i] = (aux % 10) + '0';
+		aux = aux / 10;
+		i++;
+	}
+	caux[i] = (aux % 10) + '0';
+	i++;
+	caux[i] = '\0';
+	while (0 < i--)
+	{
+		write(fd, &caux[i], 1);
+	}
+}

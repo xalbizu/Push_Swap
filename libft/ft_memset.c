@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_lib.h                                    :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 20:13:07 by xalbizu-         ###   ########.fr       */
+/*   Created: 2022/03/28 15:52:05 by xalbizu-          #+#    #+#             */
+/*   Updated: 2022/04/15 22:09:23 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_LIB_H
-# define PUSH_SWAP_LIB_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+void	*ft_memset(void *str, int c, size_t n)
 {
-	int				num;
+	unsigned char	*str2;
+	unsigned char	ch;
 
-	struct s_stack	*next;
-}	t_stack;
-void	ft_listadd_back(t_stack **lst, t_stack *new);
-t_stack	*ft_listlast(t_stack *lst);
-void	checkalpha(char *str);
-void	exit_error(void);
-void	checkrepeat(t_stack *stack, int size);
-
-#endif
+	ch = (unsigned char)c;
+	str2 = str;
+	while (n--)
+		*str2++ = ch;
+	return (str);
+}

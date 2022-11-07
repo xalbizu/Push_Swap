@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_lib.h                                    :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 20:13:07 by xalbizu-         ###   ########.fr       */
+/*   Created: 2022/03/28 13:08:10 by xalbizu-          #+#    #+#             */
+/*   Updated: 2022/03/30 11:12:53 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_LIB_H
-# define PUSH_SWAP_LIB_H
-
-# include "libft/libft.h"
-
-typedef struct s_stack
+int	ft_isalnum(int c)
 {
-	int				num;
-
-	struct s_stack	*next;
-}	t_stack;
-void	ft_listadd_back(t_stack **lst, t_stack *new);
-t_stack	*ft_listlast(t_stack *lst);
-void	checkalpha(char *str);
-void	exit_error(void);
-void	checkrepeat(t_stack *stack, int size);
-
-#endif
+	if ((c < 'a' || c > 'z') && (c < 'A'
+			|| c > 'Z') && ((c < '0') || (c > '9')))
+		return (0);
+	return (1);
+}

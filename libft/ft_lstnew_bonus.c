@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_lib.h                                    :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 20:13:07 by xalbizu-         ###   ########.fr       */
+/*   Created: 2022/04/16 08:24:48 by xalbizu-          #+#    #+#             */
+/*   Updated: 2022/11/07 19:04:36 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_LIB_H
-# define PUSH_SWAP_LIB_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+t_list	*ft_lstnew(void *content)
 {
-	int				num;
+	t_list	*new;
 
-	struct s_stack	*next;
-}	t_stack;
-void	ft_listadd_back(t_stack **lst, t_stack *new);
-t_stack	*ft_listlast(t_stack *lst);
-void	checkalpha(char *str);
-void	exit_error(void);
-void	checkrepeat(t_stack *stack, int size);
-
-#endif
+	new = (t_list *)malloc(sizeof(t_list));
+	if (new != NULL)
+	{
+		new -> content = content;
+		new -> next = NULL;
+	}
+	return (new);
+}

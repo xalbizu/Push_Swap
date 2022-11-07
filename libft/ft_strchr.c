@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_lib.h                                    :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 20:13:07 by xalbizu-         ###   ########.fr       */
+/*   Created: 2022/03/29 13:54:49 by xalbizu-          #+#    #+#             */
+/*   Updated: 2022/04/15 17:30:42 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_LIB_H
-# define PUSH_SWAP_LIB_H
-
-# include "libft/libft.h"
-
-typedef struct s_stack
+char	*ft_strchr(const char *str, int c)
 {
-	int				num;
+	unsigned int		count;
+	char				*result;
+	unsigned char		ch;
 
-	struct s_stack	*next;
-}	t_stack;
-void	ft_listadd_back(t_stack **lst, t_stack *new);
-t_stack	*ft_listlast(t_stack *lst);
-void	checkalpha(char *str);
-void	exit_error(void);
-void	checkrepeat(t_stack *stack, int size);
-
-#endif
+	count = 0;
+	ch = (unsigned char)c;
+	while (str[count])
+	{
+		if (str[count] == ch)
+		{
+			result = (char *)str;
+			return (&result[count]);
+		}
+		count++;
+	}
+	if (str[count] == ch)
+	{
+		result = (char *)str;
+		return (&result[count]);
+	}
+	return (0);
+}

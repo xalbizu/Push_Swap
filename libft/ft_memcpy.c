@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_lib.h                                    :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 20:13:07 by xalbizu-         ###   ########.fr       */
+/*   Created: 2022/03/29 11:13:54 by xalbizu-          #+#    #+#             */
+/*   Updated: 2022/04/16 11:09:57 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_LIB_H
-# define PUSH_SWAP_LIB_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef struct s_stack
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int				num;
+	size_t	count;
+	char	*str1;
+	char	*str2;
 
-	struct s_stack	*next;
-}	t_stack;
-void	ft_listadd_back(t_stack **lst, t_stack *new);
-t_stack	*ft_listlast(t_stack *lst);
-void	checkalpha(char *str);
-void	exit_error(void);
-void	checkrepeat(t_stack *stack, int size);
-
-#endif
+	str2 = (char *)src;
+	str1 = dest;
+	count = 0;
+	if (dest || src)
+	{
+		while (count < n)
+		{
+			str1[count] = str2[count];
+			count++;
+		}
+	}
+	return (dest);
+}
