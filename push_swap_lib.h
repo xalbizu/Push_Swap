@@ -26,5 +26,7 @@ t_stack	*ft_listlast(t_stack *lst);
 void	checkalpha(char *str);
 void	exit_error(void);
 void	checkrepeat(t_stack *stack, int size);
+void	printstack(t_stack *stack);
+int	notempty(char **str);
 
 #endif

@@ -42,6 +42,25 @@ void	checkrepeat(t_stack *stack, int size)
 	free(nums);
 }
 
+int	notempty(char **str)
+{
+	int i;
+	int j;
+
+	j = -1;
+	i = 0;
+	while (str[++i])
+	{
+		while (str[i][++j] != '\0')
+		{
+			if (ft_isdigit(str[i][j]))
+				return(1);
+		}
+		j = -1;
+	}
+	return(0);
+}
+
 void	checkalpha(char *str)
 {
 	int	i;

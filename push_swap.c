@@ -20,19 +20,6 @@ void	add_to_list(t_stack **stack, int num);
 void	ft_listadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_listlast(t_stack *lst);
 
-void	printstack(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	tmp = stack;
-	while (tmp->next != NULL)
-	{
-		printf("%d\n", tmp->num);
-		tmp = tmp->next;
-	}
-	printf("%d\n", tmp->num);
-}
-
 int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
@@ -48,6 +35,8 @@ int	main(int argc, char *argv[])
 	{
 		while (argv[++i])
 		{
+            if(notempty(argv) == 0)
+                exit_error();
 			size += split_args(&stack_a, argv[i]);
 		}
 	}
@@ -61,6 +50,7 @@ int	split_args(t_stack **stack, char *argv)
 	int		i;
 
 	i = -1;
+    
 	str = ft_split(argv, ' ');
 	while (str[++i])
 	{

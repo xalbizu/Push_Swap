@@ -18,15 +18,15 @@ FILES = push_swap.c push_swap_utils.c errors.c
 SRC = $(FILES:.c=.o)
 
 NAME = push_swap
-CC = clang
-CFLAGS = -Wall -Werror -Wextra
-SANITIZER = -fsanitize=address -g 
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g
+ 
 
 all: $(NAME)
 
 $(NAME): $(SRC)
 	make -C $(PATH_LIBFT)
-	$(CC) $(CFLAGS) $(FILES) $(LIBFT) $(SANITIZER) -o $(NAME)
+	$(CC) $(CFLAGS) $(FILES) $(LIBFT) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

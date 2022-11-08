@@ -35,3 +35,16 @@ t_stack	*ft_listlast(t_stack *lst)
 	}
 	return (NULL);
 }
+
+void	printstack(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	tmp = stack;
+	while (tmp->next != NULL)
+	{
+		printf("%d\n", tmp->num);
+		tmp = tmp->next;
+	}
+	printf("%d\n", tmp->num);
+}
