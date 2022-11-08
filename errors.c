@@ -68,7 +68,7 @@ void	checkalpha(char *str)
 	i = -1;
 	while (str[++i])
 	{
-		if (!ft_isdigit(str[i]))
+		if (!ft_isdigit(str[i]) && (str[i] != '-' || !ft_isdigit(str[i + 1])))
 			exit_error();
 	}
 }

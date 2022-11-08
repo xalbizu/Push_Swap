@@ -46,8 +46,9 @@ int	main(int argc, char *argv[])
 
 int	split_args(t_stack **stack, char *argv)
 {
-	char	**str;
-	int		i;
+	char		**str;
+	int			i;
+	long int	num;
 
 	i = -1;
     
@@ -55,6 +56,9 @@ int	split_args(t_stack **stack, char *argv)
 	while (str[++i])
 	{
 		checkalpha(str[i]);
+		num = ft_atoi(str[i]);							//------------ERROR------------//
+		if (num > 2147483647 || num < -2147483648) //A PESAR DE SER UN LONG INT EL ATOI SI SUPERA
+			exit_error();                          //EL LIMITE DE MAX_INT ME DEVUELVE UN NÚMERO EXTRAÑO
 		add_to_list(stack, ft_atoi(str[i]));
 	}
 	return (i);
@@ -64,7 +68,7 @@ int	split_args(t_stack **stack, char *argv)
 void	add_to_list(t_stack **stack, int num)
 {
 	t_stack	*new;
-
+	
 	new = malloc(sizeof(t_stack));
 	new->num = num;
 	new->next = NULL;

@@ -19,7 +19,7 @@ SRC = $(FILES:.c=.o)
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra #-fsanitize=address -g
+CFLAGS = #-Wall -Werror -Wextra -fsanitize=address -g
  
 
 all: $(NAME)
