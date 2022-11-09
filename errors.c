@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:26:48 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 20:26:32 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:19:29 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	checkrepeat(t_stack *stack, int size)
 
 int	notempty(char **str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = -1;
 	i = 0;
@@ -54,11 +54,11 @@ int	notempty(char **str)
 		while (str[i][++j] != '\0')
 		{
 			if (ft_isdigit(str[i][j]))
-				return(1);
+				return (1);
 		}
 		j = -1;
 	}
-	return(0);
+	return (0);
 }
 
 void	checkalpha(char *str)
@@ -68,7 +68,8 @@ void	checkalpha(char *str)
 	i = -1;
 	while (str[++i])
 	{
-		if (!ft_isdigit(str[i]) && (str[i] != '-' || !ft_isdigit(str[i + 1])))
+		if (!ft_isdigit(str[i]) && (str[i] != '-' || (i > 0
+					&& ft_isdigit(str[i - 1])) || !ft_isdigit(str[i + 1])))
 			exit_error();
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:20:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 20:27:24 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:04:09 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,28 @@ t_stack	*ft_listlast(t_stack *lst);
 int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
+	t_stack	*stack_b;
 	int		i;
 	int		size;
 
 	size = 0;
 	i = 0;
 	stack_a = NULL;
+	stack_b = NULL;
 	if (argc == 1)
 		return (0);
 	if (argc > 1)
 	{
 		while (argv[++i])
 		{
-            if(notempty(argv) == 0)
-                exit_error();
+			if (notempty(argv) == 0)
+				exit_error();
 			size += split_args(&stack_a, argv[i]);
 		}
 	}
 	checkrepeat(stack_a, size);
+	printstack(stack_a);
+	ss(&stack_a, &stack_b);
 	printstack(stack_a);
 }
 
@@ -51,24 +55,25 @@ int	split_args(t_stack **stack, char *argv)
 	long int	num;
 
 	i = -1;
-    
 	str = ft_split(argv, ' ');
 	while (str[++i])
 	{
 		checkalpha(str[i]);
-		num = ft_atoi(str[i]);							//------------ERROR------------//
-		if (num > 2147483647 || num < -2147483648) //A PESAR DE SER UN LONG INT EL ATOI SI SUPERA
-			exit_error();                          //EL LIMITE DE MAX_INT ME DEVUELVE UN NÚMERO EXTRAÑO
+		num = ft_atoi(str[i]);
+		if (num > 2147483647 || num < -2147483648)
+		{
+			free(str);
+			exit_error();
+		}
 		add_to_list(stack, ft_atoi(str[i]));
 	}
-	return (i);
-	free(str);
+	return (free(str), i);
 }
 
 void	add_to_list(t_stack **stack, int num)
 {
 	t_stack	*new;
-	
+
 	new = malloc(sizeof(t_stack));
 	new->num = num;
 	new->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:23:29 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 19:24:19 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:37:18 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,17 @@ void	printstack(t_stack *stack)
 		tmp = tmp->next;
 	}
 	printf("%d\n", tmp->num);
+}
+
+int	ft_listsize(t_stack *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst -> next;
+		i++;
+	}
+	return (i);
 }

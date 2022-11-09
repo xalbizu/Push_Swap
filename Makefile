@@ -6,20 +6,19 @@
 #    By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 16:52:12 by xalbizu-          #+#    #+#              #
-#    Updated: 2022/11/07 19:25:34 by xalbizu-         ###   ########.fr        #
+#    Updated: 2022/11/09 19:43:57 by xalbizu-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PATH_LIBFT = libft/
 LIBFT = $(PATH_LIBFT)libft.a
 
-FILES = push_swap.c push_swap_utils.c errors.c
-
+FILES = push_swap.c push_swap_utils.c errors.c swap.c 
 SRC = $(FILES:.c=.o)
 
 NAME = push_swap
 CC = gcc
-CFLAGS = #-Wall -Werror -Wextra -fsanitize=address -g
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
  
 
 all: $(NAME)

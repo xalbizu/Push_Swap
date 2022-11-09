@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/07 20:13:07 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:54:33 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ void	checkalpha(char *str);
 void	exit_error(void);
 void	checkrepeat(t_stack *stack, int size);
 void	printstack(t_stack *stack);
-int	notempty(char **str);
+int		notempty(char **str);
+void	sa(t_stack **stack_a);
+void	sb(t_stack **stack_b);
+int		ft_listsize(t_stack *lst);
+void	ss(t_stack **stack_a, t_stack **stack_b);
 
 #endif

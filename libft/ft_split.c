@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 15:02:32 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/04/28 19:04:59 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/11/09 15:53:41 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	arr = (char **)malloc((numberofwords(s, c) + 1) * sizeof(char *));
 	if (!arr || sizeof(arr) == 0)
-		return (NULL);
+		return (free(arr), NULL);
 	while (++i <= (int)ft_strlen(s))
 	{
 		if (s[i] != c && start < 0)
