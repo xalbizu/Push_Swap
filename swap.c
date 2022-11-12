@@ -3,9 +3,9 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xalbizu- <xalbizu-@student.32.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:24:34 by xalbizu-          #+#    #+#             */
+/*   Created: 2022/11/09 17:23:33 by xalbizu-          #+#    #+#             */
 /*   Updated: 2022/11/09 17:58:25 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -28,19 +28,19 @@ void	swap(t_stack **stack)
 
 void	sa(t_stack **stack_a)
 {
-	write(1, "sa\n", 4);
+	write(1, "sa\n", 3);
 	swap(stack_a);
 }
 
 void	sb(t_stack **stack_b)
 {
-	write(1, "sb\n", 4);
+	write(1, "sb\n", 3);
 	swap(stack_b);
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
-	write(1, "ss\n", 4);
+	write(1, "ss\n", 3);
 	swap(stack_a);
 	swap(stack_b);
 }

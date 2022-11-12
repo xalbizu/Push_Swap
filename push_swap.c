@@ -29,8 +29,8 @@ int	main(int argc, char *argv[])
 
 	size = 0;
 	i = 0;
-	stack_a = NULL;
-	stack_b = NULL;
+	stack_a = 0;
+	stack_b = 0;
 	if (argc == 1)
 		return (0);
 	if (argc > 1)
@@ -44,8 +44,13 @@ int	main(int argc, char *argv[])
 	}
 	checkrepeat(stack_a, size);
 	printstack(stack_a);
-	ss(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	rrr(&stack_a, &stack_b);
 	printstack(stack_a);
+	write(1, "----\n",5);
+	printstack(stack_b);
 }
 
 int	split_args(t_stack **stack, char *argv)
