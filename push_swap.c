@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:20:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/09 18:04:09 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:58:31 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,6 @@ int	main(int argc, char *argv[])
 	}
 	checkrepeat(stack_a, size);
 	printstack(stack_a);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	rrr(&stack_a, &stack_b);
-	printstack(stack_a);
-	write(1, "----\n",5);
-	printstack(stack_b);
 }
 
 int	split_args(t_stack **stack, char *argv)
