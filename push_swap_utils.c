@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:23:29 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/09 17:37:18 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/12/10 16:09:29 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,18 @@ int	ft_listsize(t_stack *lst)
 		i++;
 	}
 	return (i);
+}
+
+int	a_shorted(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	tmp = stack;
+	while (tmp->next != NULL)
+	{
+		if (tmp->num > tmp->next->num)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }

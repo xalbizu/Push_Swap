@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:26:48 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/09 17:19:29 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:38:07 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,9 @@ void	checkalpha(char *str)
 	i = -1;
 	while (str[++i])
 	{
-		if (!ft_isdigit(str[i]) && (str[i] != '-' || (i > 0
-					&& ft_isdigit(str[i - 1])) || !ft_isdigit(str[i + 1])))
+		if (!ft_isdigit(str[i]) && (str[i] != '-'
+				|| (i > 0 && ft_isdigit(str[i - 1]))
+				|| !ft_isdigit(str[i + 1])))
 			exit_error();
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/14 16:50:56 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/12/10 17:09:39 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 typedef struct s_stack
 {
 	int				num;
-
 	struct s_stack	*next;
+
 }	t_stack;
 void	ft_listadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_listlast(t_stack *lst);
@@ -40,5 +40,6 @@ void	rr(t_stack **stack_a, t_stack **stack_b);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
+int		a_shorted(t_stack *stack);
 
 #endif

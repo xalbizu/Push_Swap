@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:20:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/11/14 16:58:31 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/12/10 16:11:45 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	main(int argc, char *argv[])
 		}
 	}
 	checkrepeat(stack_a, size);
+	if (a_shorted(stack_a))
+		return (0);
 	printstack(stack_a);
 }
 
