@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/12/10 17:09:39 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/12/19 18:35:51 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ typedef struct s_stack
 {
 	int				num;
 	struct s_stack	*next;
+	int				index;
 
 }	t_stack;
 void	ft_listadd_back(t_stack **lst, t_stack *new);
@@ -41,5 +42,9 @@ void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 int		a_shorted(t_stack *stack);
-
+int		*setarray(t_stack *stack, int size, int *array);
+int		returnmin(int size, int *array);
+void	indexarray(t_stack *stack);
+int		isindexed(int size, int *array);
+int		*indexarray2(int *array, int size);
 #endif
