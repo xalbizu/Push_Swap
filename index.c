@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:08:25 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/12/19 18:57:26 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/12/19 19:12:28 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	indexarray(t_stack *stack)
 		aux->index = array[i];
 		aux = aux->next;
 	}
+	free(array);
 }
 
 int	*indexarray2(int *array, int size)
