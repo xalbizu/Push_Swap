@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:20:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/12/19 19:09:33 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/12/19 19:30:47 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	split_args(t_stack **stack, char *argv)
 		num = ft_atoi(str[i]);
 		if (num > 2147483647 || num < -2147483648)
 		{
-			free(str);
 			exit_error();
 		}
 		add_to_list(stack, ft_atoi(str[i]));
+		free(str[i]);
 	}
 	return (free(str), i);
 }

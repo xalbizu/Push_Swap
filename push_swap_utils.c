@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:23:29 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/12/19 18:59:03 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2022/12/19 19:34:43 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	printstack(t_stack *stack)
 	tmp = stack;
 	while (tmp->next != NULL)
 	{
-		printf("%d\n", tmp->num);
+		printf("%d\n", tmp->index);
 		tmp = tmp->next;
 	}
-	printf("%d\n", tmp->num);
+	printf("%d\n", tmp->index);
 }
 
 int	ft_listsize(t_stack *lst)
