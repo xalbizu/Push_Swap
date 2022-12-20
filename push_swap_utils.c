@@ -43,10 +43,10 @@ void	printstack(t_stack *stack)
 	tmp = stack;
 	while (tmp->next != NULL)
 	{
-		printf("%d\n", tmp->index);
+		printf("%d\n", tmp->num);
 		tmp = tmp->next;
 	}
-	printf("%d\n", tmp->index);
+	printf("%d\n", tmp->num);
 }
 
 int	ft_listsize(t_stack *lst)

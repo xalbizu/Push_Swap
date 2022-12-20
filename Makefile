@@ -14,12 +14,12 @@ PATH_LIBFT = libft/
 LIBFT = $(PATH_LIBFT)libft.a
 
 FILES = push_swap.c push_swap_utils.c errors.c swap.c push.c rotate.c index.c\
-reverse_rotate.c
+reverse_rotate.c algorithm.c
 SRC = $(FILES:.c=.o)
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address 
+CFLAGS = #-Werror -Wall  -Wextra -g -fsanitize=address 
  
 
 all: $(NAME)

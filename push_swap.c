@@ -47,6 +47,9 @@ int	main(int argc, char *argv[])
 		return (0);
 	indexarray(stack_a);
 	printstack(stack_a);
+	short_stack(&stack_a, &stack_b);
+	printf("--------------------\n");
+	printstack(stack_a);
 }
 
 int	split_args(t_stack **stack, char *argv)
