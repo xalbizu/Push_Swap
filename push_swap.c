@@ -11,14 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap_lib.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-int		split_args(t_stack **stack, char *argv);
-void	add_to_list(t_stack **stack, int num);
-void	ft_listadd_back(t_stack **lst, t_stack *new);
-t_stack	*ft_listlast(t_stack *lst);
 
 int	main(int argc, char *argv[])
 {
@@ -46,7 +38,6 @@ int	main(int argc, char *argv[])
 	if (a_shorted(stack_a))
 		return (0);
 	indexarray(stack_a);
-	printstack(stack_a);
 	short_stack(&stack_a, &stack_b);
 	printf("--------------------\n");
 	printstack(stack_a);

@@ -22,6 +22,8 @@ typedef struct s_stack
 	int				index;
 
 }	t_stack;
+int		split_args(t_stack **stack, char *argv);
+void	add_to_list(t_stack **stack, int num);
 void	ft_listadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_listlast(t_stack *lst);
 void	checkalpha(char *str);
