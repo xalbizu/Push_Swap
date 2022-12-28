@@ -11,43 +11,56 @@
 /* ************************************************************************** */
 
 #include "push_swap_lib.h"
-void short_small(t_stack **stack_a, t_stack **stack_b, int size)
+
+void short_5(t_stack **stack_a, t_stack **stack_b)
 {
-	if (size == 2)
-		sa(stack_a);
-	if (size == 3)
+
+}
+
+void short_4(t_stack **stack_a, t_stack **stack_b)
+{
+	if ((*stack_a)->next->index == 3)
+		ra(stack_a);
+	else if ((*stack_a)->next->next->index == 3)
 	{
-		if ((*stack_a)->index == 0)
-		{
+		ra(stack_a);
+		ra(stack_a);
+	}
+	else if ((*stack_a)->next->next->next->index == 3)
+		rra(stack_a);
+	pb(stack_a, stack_b);
+	short_3(stack_a, stack_b);
+	pa(stack_b, stack_a);
+	ra(stack_a);
+
+}
+
+void short_3(t_stack **stack_a, t_stack **stack_b)
+{
+	if (a_shorted(*stack_a)) //para el caso en el que del short 4 pasan ordenados
+		return ;
+	if ((*stack_a)->index == 0)
+	{
+		ra(stack_a);
+		sa(stack_a);
+		rra(stack_a);
+	}
+	else if((*stack_a)->index == 1)
+	{
+		if ((*stack_a)->next->index == 0)
+			sa(stack_a);
+		else
+			rra(stack_a);
+	}
+	else
+	{
+		if((*stack_a)->next->index == 0)
 			ra(stack_a);
+		else
+		{
 			sa(stack_a);
 			rra(stack_a);
 		}
-		else if((*stack_a)->index == 1)
-		{
-			if ((*stack_a)->next->index == 0)
-				sa(stack_a);
-			else
-				rra(stack_a);
-		}
-		else
-		{
-			if((*stack_a)->next->index == 0)
-				ra(stack_a);
-			else
-			{
-				sa(stack_a);
-				rra(stack_a);
-			}
-		}
-	}
-	if (size == 4)
-	{
-		/* code */
-	}
-	if (size == 5)
-	{
-		/* code */
 	}
 	
 }
@@ -84,7 +97,12 @@ void short_stack(t_stack **stack_a, t_stack **stack_b)
 	size = ft_listsize(*stack_a);
     if (size > 5)
         short_big(stack_a, stack_b, size);
+	else if (size == 2)
+		sa(stack_a);
+	else if (size == 3)
+		short_3(stack_a, stack_b);
+	else if (size == 4)
+		short_4(stack_a, stack_b);
 	else
-		short_small(stack_a, stack_b, size);
-    
+		short_5(stack_a, stack_b);
 }

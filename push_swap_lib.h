@@ -34,7 +34,7 @@ void	sb(t_stack **stack_b);
 int		ft_listsize(t_stack *lst);
 void	ss(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
-void	pa(t_stack **stack_a, t_stack **stack_b);
+void	pa(t_stack **stack_b, t_stack **stack_a);
 void	pa_all(t_stack **stack_b, t_stack **stack_a);
 void	ra(t_stack **stack_a);
 void	rb(t_stack **stack_b);
@@ -50,4 +50,7 @@ int		isindexed(int size, int *array);
 int		*indexarray2(int *array, int size);
 void	short_stack(t_stack **stack_a, t_stack **stack_b);
 void 	short_big(t_stack **stack_a, t_stack **stack_b, int size);
+void 	short_3(t_stack **stack_a, t_stack **stack_b);
+void 	short_4(t_stack **stack_a, t_stack **stack_b);
+void 	short_5(t_stack **stack_a, t_stack **stack_b);
 #endif
