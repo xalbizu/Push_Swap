@@ -55,7 +55,7 @@ int	split_args(t_stack **stack, char *argv)
 	{
 		checkalpha(str[i]);
 		num = ft_atoi(str[i]);
-		if (num >= 2147483647 || num <= -2147483648)
+		if (num > 2147483647 || num < -2147483648)
 		{
 			exit_error();
 		}
