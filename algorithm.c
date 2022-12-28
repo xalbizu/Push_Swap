@@ -14,11 +14,30 @@
 
 void short_5(t_stack **stack_a, t_stack **stack_b)
 {
-
+	if ((*stack_a)->next->index == 4)
+		ra(stack_a);
+	else if ((*stack_a)->next->next->index == 4)
+	{
+		ra(stack_a);
+		ra(stack_a);
+	}
+	else if ((*stack_a)->next->next->next->index == 4)
+	{
+		rra(stack_a);
+		rra(stack_a);
+	}
+	else if ((*stack_a)->next->next->next->next->index == 4)
+		rra(stack_a);
+	pb(stack_a, stack_b);
+	short_4(stack_a, stack_b);
+	pa(stack_b, stack_a);
+	ra(stack_a);
 }
 
 void short_4(t_stack **stack_a, t_stack **stack_b)
 {
+	if (a_shorted(*stack_a)) //para el caso en el que del short 5 pasan ordenados
+		return ;
 	if ((*stack_a)->next->index == 3)
 		ra(stack_a);
 	else if ((*stack_a)->next->next->index == 3)
@@ -29,13 +48,13 @@ void short_4(t_stack **stack_a, t_stack **stack_b)
 	else if ((*stack_a)->next->next->next->index == 3)
 		rra(stack_a);
 	pb(stack_a, stack_b);
-	short_3(stack_a, stack_b);
+	short_3(stack_a);
 	pa(stack_b, stack_a);
 	ra(stack_a);
 
 }
 
-void short_3(t_stack **stack_a, t_stack **stack_b)
+void short_3(t_stack **stack_a)
 {
 	if (a_shorted(*stack_a)) //para el caso en el que del short 4 pasan ordenados
 		return ;
@@ -100,7 +119,7 @@ void short_stack(t_stack **stack_a, t_stack **stack_b)
 	else if (size == 2)
 		sa(stack_a);
 	else if (size == 3)
-		short_3(stack_a, stack_b);
+		short_3(stack_a);
 	else if (size == 4)
 		short_4(stack_a, stack_b);
 	else
