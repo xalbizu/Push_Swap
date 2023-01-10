@@ -77,6 +77,6 @@ void	checkalpha(char *str)
 
 void	exit_error(void)
 {
-	write(1, "Error\n", 7);
+	write(2, "Error\n", 6);
 	exit(1);
 }
