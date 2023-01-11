@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:49:13 by marvin            #+#    #+#             */
-/*   Updated: 2022/12/20 12:49:13 by marvin           ###   ########.fr       */
+/*   Updated: 2023/01/11 20:28:42 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_lib.h"
 
-void short_5(t_stack **stack_a, t_stack **stack_b)
+void	short_5(t_stack **stack_a, t_stack **stack_b)
 {
 	if ((*stack_a)->next->index == 4)
 		ra(stack_a);
@@ -34,9 +34,9 @@ void short_5(t_stack **stack_a, t_stack **stack_b)
 	ra(stack_a);
 }
 
-void short_4(t_stack **stack_a, t_stack **stack_b)
+void	short_4(t_stack **stack_a, t_stack **stack_b)
 {
-	if (a_shorted(*stack_a)) //para el caso en el que del short 5 pasan ordenados
+	if (a_shorted(*stack_a))
 		return ;
 	if ((*stack_a)->next->index == 3)
 		ra(stack_a);
@@ -51,12 +51,11 @@ void short_4(t_stack **stack_a, t_stack **stack_b)
 	short_3(stack_a);
 	pa(stack_b, stack_a);
 	ra(stack_a);
-
 }
 
-void short_3(t_stack **stack_a)
+void	short_3(t_stack **stack_a)
 {
-	if (a_shorted(*stack_a)) //para el caso en el que del short 4 pasan ordenados
+	if (a_shorted(*stack_a))
 		return ;
 	if ((*stack_a)->index == 0)
 	{
@@ -64,7 +63,7 @@ void short_3(t_stack **stack_a)
 		sa(stack_a);
 		rra(stack_a);
 	}
-	else if((*stack_a)->index == 1)
+	else if ((*stack_a)->index == 1)
 	{
 		if ((*stack_a)->next->index == 0)
 			sa(stack_a);
@@ -73,7 +72,7 @@ void short_3(t_stack **stack_a)
 	}
 	else
 	{
-		if((*stack_a)->next->index == 0)
+		if ((*stack_a)->next->index == 0)
 			ra(stack_a);
 		else
 		{
@@ -81,13 +80,12 @@ void short_3(t_stack **stack_a)
 			rra(stack_a);
 		}
 	}
-	
 }
 
-void short_big(t_stack **stack_a, t_stack **stack_b, int size)
+void	short_big(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	while (!a_shorted(*stack_a))
@@ -95,27 +93,25 @@ void short_big(t_stack **stack_a, t_stack **stack_b, int size)
 		j = -1;
 		while (++j < size)
 		{
-			if  ((*stack_a)->index >> i & 1)
+			if ((*stack_a)->index >> i & 1)
 				ra(stack_a);
-			else{
+			else
 				pb(stack_a, stack_b);
-			}
 		}
 		pa_all(stack_b, stack_a);
 		if (a_shorted(*stack_a))
 			return ;
 		i++;
 	}
-	
 }
 
-void short_stack(t_stack **stack_a, t_stack **stack_b)
+void	short_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
 
 	size = ft_listsize(*stack_a);
-    if (size > 5)
-        short_big(stack_a, stack_b, size);
+	if (size > 5)
+		short_big(stack_a, stack_b, size);
 	else if (size == 2)
 		sa(stack_a);
 	else if (size == 3)
@@ -124,4 +120,5 @@ void short_stack(t_stack **stack_a, t_stack **stack_b)
 		short_4(stack_a, stack_b);
 	else
 		short_5(stack_a, stack_b);
+	free_stacks(*stack_a, *stack_b, size);
 }

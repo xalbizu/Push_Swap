@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:20:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/12/19 19:30:47 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:49:38 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ int	main(int argc, char *argv[])
 		return (0);
 	indexarray(stack_a);
 	short_stack(&stack_a, &stack_b);
-	printf("--------------------\n");
-	printstack(stack_a);
 }
 
 int	split_args(t_stack **stack, char *argv)

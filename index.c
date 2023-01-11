@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:08:25 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/12/19 19:12:28 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:48:45 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	*setarray(t_stack *stack, int size, int *array)
 void	indexarray(t_stack *stack)
 {
 	int		i;
-	int		min;
 	int		*array;
 	int		size;
 	t_stack	*aux;
@@ -37,16 +36,11 @@ void	indexarray(t_stack *stack)
 	size = ft_listsize(stack);
 	array = malloc(size * sizeof(int));
 	array = setarray(stack, size, array);
-	i = -1;
-	min = returnmin(size, array);
-	while (++i < size)
-	{
-		array[i] -= min;
-	}
 	array = indexarray2(array, size);
 	i = -1;
 	while (++i < size)
 	{
+		array[i] += 2147483648;
 		aux->index = array[i];
 		aux = aux->next;
 	}
@@ -60,22 +54,22 @@ int	*indexarray2(int *array, int size)
 	int	min;
 	int	min_index;
 
-	num = 0;
+	num = -2147483648;
 	while (!isindexed(size, array))
-	{	
+	{
 		min_index = 0;
 		min = 2147483647;
 		i = -1;
 		while (++i < size)
 		{
-			if (array[i] < min && array[i] > num)
+			if (array[i] <= min && array[i] >= num)
 			{
 				min_index = i;
 				min = array[i];
 			}
 		}
-		num++;
 		array[min_index] = num;
+		num++;
 	}
 	return (array);
 }
@@ -87,7 +81,7 @@ int	isindexed(int size, int *array)
 	i = -1;
 	while (++i < size)
 	{
-		if (array[i] >= size || array[i] < 0)
+		if (array[i] >= -2147483648 + size)
 			return (0);
 	}
 	return (1);

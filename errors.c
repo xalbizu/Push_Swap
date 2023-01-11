@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:26:48 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/12/12 13:38:02 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/01/11 20:33:03 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,21 @@ void	exit_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
+}
+
+void	free_stacks(t_stack *stack_a, t_stack *stack_b, int size)
+{
+	t_stack	*tmp;
+	int		i;
+
+	i = -1;
+	tmp = stack_a;
+	while (++i <= size)
+	{
+		stack_a = tmp;
+		free(stack_a);
+		tmp = tmp->next;
+	}
+	free(stack_a);
+	free(stack_b);
 }

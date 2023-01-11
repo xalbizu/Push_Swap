@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2022/12/19 18:35:51 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/01/11 20:28:22 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,9 @@ void	indexarray(t_stack *stack);
 int		isindexed(int size, int *array);
 int		*indexarray2(int *array, int size);
 void	short_stack(t_stack **stack_a, t_stack **stack_b);
-void 	short_big(t_stack **stack_a, t_stack **stack_b, int size);
-void 	short_3(t_stack **stack_a);
-void 	short_4(t_stack **stack_a, t_stack **stack_b);
-void 	short_5(t_stack **stack_a, t_stack **stack_b);
+void	short_big(t_stack **stack_a, t_stack **stack_b, int size);
+void	short_3(t_stack **stack_a);
+void	short_4(t_stack **stack_a, t_stack **stack_b);
+void	short_5(t_stack **stack_a, t_stack **stack_b);
+void	free_stacks(t_stack *stack_a, t_stack *stack_b, int size);
 #endif
