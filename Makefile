@@ -6,7 +6,7 @@
 #    By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 16:52:12 by xalbizu-          #+#    #+#              #
-#    Updated: 2023/01/11 20:33:58 by xalbizu-         ###   ########.fr        #
+#    Updated: 2023/01/12 13:22:24 by xalbizu-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC = $(FILES:.c=.o)
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -Werror -Wall  -Wextra -g3 #-fsanitize=address 
+CFLAGS = -Werror -Wall  -Wextra -g3 -fsanitize=address 
  
 
 all: $(NAME)

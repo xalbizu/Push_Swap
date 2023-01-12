@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:26:48 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/01/11 20:35:28 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/01/12 13:09:38 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,9 @@ void	free_stacks(t_stack *stack_a, t_stack *stack_b, int size)
 	tmp = stack_a;
 	while (++i < size)
 	{
-		stack_a = tmp;
-		free(stack_a);
-		tmp = tmp->next;
+		stack_a = stack_a->next;
+		free(tmp);
+		tmp = stack_a;
 	}
 	free(stack_a);
 	free(stack_b);
