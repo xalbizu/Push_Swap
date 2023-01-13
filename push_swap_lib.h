@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:30:04 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/01/11 20:28:22 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:30:20 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,7 @@ void	short_3(t_stack **stack_a);
 void	short_4(t_stack **stack_a, t_stack **stack_b);
 void	short_5(t_stack **stack_a, t_stack **stack_b);
 void	free_stacks(t_stack *stack_a, t_stack *stack_b, int size);
+void	special_1(t_stack **stack_a, t_stack **stack_b);
+void	special_2(t_stack **stack_a, t_stack **stack_b);
+void	special_3(t_stack **stack_a, t_stack **stack_b);
 #endif

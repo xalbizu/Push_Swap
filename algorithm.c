@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:49:13 by marvin            #+#    #+#             */
-/*   Updated: 2023/01/12 14:35:42 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:28:40 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 void	short_5(t_stack **stack_a, t_stack **stack_b)
 {
+	if ((*stack_a)->index == 1 && (*stack_a)->next->index
+		== 3 && (*stack_a)->next->next->index == 0
+		&& (*stack_a)->next->next->next->index == 4)
+	{
+		special_3(stack_a, stack_b);
+		return ;
+	}
 	if ((*stack_a)->next->index == 4)
 		ra(stack_a);
 	else if ((*stack_a)->next->next->index == 4)
@@ -110,7 +117,15 @@ void	short_stack(t_stack **stack_a, t_stack **stack_b)
 	int	size;
 
 	size = ft_listsize(*stack_a);
-	if (size > 5)
+	if ((*stack_a)->index == 3 && (*stack_a)->next->index
+		== 0 && (*stack_a)->next->next->index == 4
+		&& (*stack_a)->next->next->next->index == 2 && size == 5)
+		special_1(stack_a, stack_b);
+	else if ((*stack_a)->index == 1 && (*stack_a)->next->index
+		== 2 && (*stack_a)->next->next->index == 4
+		&& (*stack_a)->next->next->next->index == 0 && size == 5)
+		special_2(stack_a, stack_b);
+	else if (size > 5)
 		short_big(stack_a, stack_b, size);
 	else if (size == 2)
 		sa(stack_a);
